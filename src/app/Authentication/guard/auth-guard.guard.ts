@@ -18,6 +18,7 @@ export class AuthGuardGuard implements CanActivate {
     }
     else
     alert("Please login first")
+    
     {this.router.navigate(['login'])
     return false;}
   }
