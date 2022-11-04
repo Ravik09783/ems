@@ -1,0 +1,36 @@
+input{
+    width: 100%!important;
+}
+
+.loginform{
+    height: 100vh;
+    /* width: 80%; */
+}
+element.style {
+    /* flex-direction: column;
+    box-sizing: border-box;
+    display: flex; */
+    width: 100%!important;
+}
+
+.leginText{
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.abc{
+    background-color: blueviolet;
+    background-image: url('./../../../assets//img/management.jpg');
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+.example-form{
+    width: 80%;
+}
+
+.lock i{
+    font-size: 55px;
+    color:rgb(71, 70, 70) ;
+    margin-bottom: 10px;
+}
