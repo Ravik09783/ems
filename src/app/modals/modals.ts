@@ -1,7 +1,7 @@
 export interface login{
     email:string;
     password:string;
-    token:string;
+    access_token:string;
     result:{
         password:string;
     };

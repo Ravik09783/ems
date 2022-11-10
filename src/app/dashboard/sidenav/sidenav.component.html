@@ -15,17 +15,15 @@
             <li class="nav-link">
               <a class="accordion">
                 <i class="mdi mdi-speedometer"></i>
-                <span class="text nav-text">Dashboard</span>
+                <span class="text nav-text" routerLink="../dashboard">Dashboard</span>
               </a>
-              <ul class="panel">
-                <li><a >Analytics</a></li>
-              </ul>
+           
             </li>
 
             <li class="nav-link">
               <a >
                 <i class="mdi mdi-view-grid-plus-outline"></i>
-                <span class="text nav-text">Apps</span>
+                <span class="text nav-text" routerLink="../dashboard/profile">Profile</span>
               </a>
             </li>
 
@@ -67,104 +65,7 @@
       </div>
     </nav>
 
-    <section class="home-section">
-      <div class="header home-content">
-        <div class="search">
-          <div class="bar-icon"> <img (click)="toggle()" src="../../../assets/./img/bars-solid.svg" style="height: 30px;" class="mx-3" alt=""></div>
-          <div class="serch-w-input">
-            <!-- <input type="text" name="" id="" placeholder="Search..." /> -->
-            <div class="search-icon">
-              <!-- <span class="mdi mdi-magnify search-widget-icon"></span> -->
-            </div>
-          </div>
-        </div>
-        <div class="header-nav mx-3">
-            <a routerLink="../login">Logout</a>
-        </div>
-      </div>
-      <div class="custom-padding">
-        <section class="col-padding">
-          <ul class="four-dived">
-            <li>
-              <div class="earning-box">
-                <div class="total-1">
-                  <p class="gray-total">Total Earning</p>
-                  <p class="value-total text-green">+16.24 %</p>
-                </div>
-                <div class="usd-value">
-                  <div class="left-usd">
-                    <h4>$559.25k</h4>
-                    <a >View net earnings</a>
-                  </div>
-                  <div class="right-usd">
-                    <button class="usd-button green-color">
-                      <i class="bx bx-dollar-circle"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="earning-box">
-                <div class="total-1">
-                  <p class="gray-total">ORDERS</p>
-                  <p class="value-total text-red">-3.57 %</p>
-                </div>
-                <div class="usd-value">
-                  <div class="left-usd">
-                    <h4>36,894</h4>
-                    <a >View net earnings</a>
-                  </div>
-                  <div class="right-usd">
-                    <button class="usd-button blue-color">
-                      <i class="bx bx-shopping-bag"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="earning-box">
-                <div class="total-1">
-                  <p class="gray-total">CUSTOMERS</p>
-                  <p class="value-total text-green">+29.08 %</p>
-                </div>
-                <div class="usd-value">
-                  <div class="left-usd">
-                    <h4>183.35M</h4>
-                    <a >See Details</a>
-                  </div>
-                  <div class="right-usd">
-                    <button class="usd-button yellow-color">
-                      <i class="bx bx-shopping-bag"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="earning-box">
-                <div class="total-1">
-                  <p class="gray-total">My Balance</p>
-                  <p class="value-total text-silver">+0.00 %</p>
-                </div>
-                <div class="usd-value">
-                  <div class="left-usd">
-                    <h4>$165.89k</h4>
-                    <a >Withdraw money</a>
-                  </div>
-                  <div class="right-usd">
-                    <button class="usd-button red-color">
-                      <i class="bx bx-wallet"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </section>
+ 
 
 
 

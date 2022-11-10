@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://testtourapp.herokuapp.com/users/signin'
+  baseUrl: 'http://3.108.151.73/api/login',
+  rolesURL:'http://3.108.151.73/api/roles'
 };
 
 /*

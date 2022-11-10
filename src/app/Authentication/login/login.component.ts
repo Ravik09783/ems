@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     // this.auth.print()
+    // this.auth.roles().subscribe((res)=>console.log("Hello",res))
   }
 
   selectedValue!:string;
@@ -39,12 +40,12 @@ export class LoginComponent implements OnInit {
     else{
       this.abc = this.loginForm.value;
       this.auth.login(this.abc).subscribe((res)=>{
-        console.log(res)
-        const {token}= res;
-        const {result}= res;
-        console.log(token)
-        localStorage.setItem("token",token)
-        console.log("123123",result.password)
+        console.log("RESULT",res)
+        const {access_token}= res;
+        // const {result}= res;
+        console.log(access_token)
+        localStorage.setItem("access_token",access_token)
+        // console.log("123123",result.password)
         // this.router.navigate(['/dashboard'])
         // this.loginForm.reset()
 

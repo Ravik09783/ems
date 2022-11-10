@@ -1,0 +1,14 @@
+.header {
+    width: 100%;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e3e3e3;
+  }
+  a{
+    cursor: pointer;
+  }

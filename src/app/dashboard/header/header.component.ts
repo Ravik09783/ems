@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  toggling:boolean= this.auth.toggling;
+  constructor(
+    private auth:AuthService,
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
+  }
+  toggle(){
+    this.toggling = !this.toggling
+    console.log("form header",this.toggling)
+  }
+  logout(){
+    localStorage.removeItem('access_token');
+    this.router.navigate(['../login'])
+
   }
 
 }

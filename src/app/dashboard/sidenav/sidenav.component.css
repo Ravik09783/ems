@@ -113,7 +113,10 @@ p.menu-p {
     overflow: hidden;
     transition: 0.9s;
 }
-.custom-padding {
+ul li{
+  cursor: pointer;
+}
+/* .custom-padding {
   padding: 30px;
 }
 .four-dived li {
@@ -169,7 +172,7 @@ p.value-total {
   font-size: 22px;
   color: #495057;
   margin-bottom: 20px;
-}
+} */
 
 
 

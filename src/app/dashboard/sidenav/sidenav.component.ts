@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
-  toggling:boolean= false;
-  constructor() { }
+  toggling:boolean= this.auth.toggling;
+  constructor(
+    private auth:AuthService
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.toggle()
   }
 
   toggle(){
