@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  // roles:any;
   constructor(
     private auth: AuthService
   ) { }
@@ -15,7 +15,15 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     // this.auth.roles().subscribe((res)=>console.log("Profile",res))
     // console.log(localStorage.getItem('access_token'))
-    this.auth.roles().subscribe((res)=>console.log("RESPONSE FROM PROFILE FOLDER", res))
+    this.auth.roles().subscribe((res:any)=>{
+      // this.roles= res;
+      //  console.log("AAAAAAAAA",res.roles);       ****
+        // const {roles} = res;
+     })
+    // const {roles}= this.roles;
+    // console.log(this.roles)
+
+
   }
 
 }

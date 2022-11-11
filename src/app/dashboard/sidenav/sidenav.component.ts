@@ -15,7 +15,7 @@ export class SidenavComponent implements OnInit {
   ngOnInit(){
     this.toggle()
   }
-
+  role = localStorage.getItem('role')
   toggle(){
     this.toggling = !this.toggling
     console.log(this.toggling)

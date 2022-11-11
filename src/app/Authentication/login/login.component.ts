@@ -16,6 +16,9 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('access_token') && localStorage.getItem('role')){
+      this.router.navigate(['./dashboard'])
+    }
     // this.auth.print()
     // this.auth.roles().subscribe((res)=>console.log("Hello",res))
   }
@@ -39,9 +42,13 @@ export class LoginComponent implements OnInit {
     }
     else{
       this.abc = this.loginForm.value;
-      this.auth.login(this.abc).subscribe((res)=>{
+      this.auth.login(this.abc).subscribe((res:any)=>{
         console.log("RESULT",res)
+        // console.log("RES_______",res)
         const {access_token}= res;
+        const {user} = res;
+        console.log("User", user.id)
+        localStorage.setItem("role", user.id)
         // const {result}= res;
         console.log(access_token)
         localStorage.setItem("access_token",access_token)

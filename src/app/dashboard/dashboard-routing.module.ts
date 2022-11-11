@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from '../authentication/not-found/not-found.component';
+import { AddMemberComponent } from './add-member/add-member.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
         children: [
             {path:'', component:HomeComponent},
             {path:'profile', component:ProfileComponent},
+            {path:'add-member', component:AddMemberComponent},
             {path:'**', component:NotFoundComponent}
         ]
     }

@@ -9,7 +9,7 @@ import { login } from '../modals/modals';
 export class AuthService {
 
   link=environment.baseUrl;
-
+  Register = environment.register
   toggling:boolean= true;
   constructor(
     private http: HttpClient,
@@ -44,6 +44,13 @@ isLoggedIn(){
   
   return !!localStorage.getItem("access_token")
 }
+
+register(data:any){
+  return this.http.post<any>(this.Register,data)
+
+}
+
+
 
 }
 

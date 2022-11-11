@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-sm-12 abc"></div>
+      <div
+        class="col-md-4 col-sm-12 loginform"
+        fxLayoutAlign="center center"
+        fxLayout="column"
+      >
+        <form
+          class="example-form shadow p-4"
+          fxLayout="column"
+          [formGroup]="signupForm"
+          (ngSubmit)="onSubmit()"
+        >
+          <div class="text-center lock">
+            <i class="fa-solid fa-unlock"></i>
+          </div>
+  
+          <div class="text-center leginText">
+            <div>Welcome to team &#128513;</div>
+          </div>
+          <mat-form-field>
+            <mat-label>Select Your Role</mat-label>
+            <mat-select [(value)]="selectedValue">                            
+              <mat-option  *ngFor="let role of brand" [value]="role.name">
+                 {{ role.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput formControlName="first" />
+          </mat-form-field>
+  
+          <!-- <mat-form-field class="example-full-width">
+            <mat-label>Last Name</mat-label>
+            <input type="text" matInput formControlName="lname" />
+          </mat-form-field> -->
+  
+      
+  
+  
+          <!-- <mat-form-field class="example-full-width">
+            <mat-label>Address</mat-label>
+            <input type="text" matInput formControlName="address" />
+          </mat-form-field> -->
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" email="true" />
+            <!-- <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+              </mat-error> -->
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input
+              type="password"
+              matInput
+              placeholder="Password"
+              formControlName="password"
+              minlength="8"
+            />
+  
+            <mat-error> Password length should be min 8 digit </mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Confirm Password</mat-label>
+            <input
+              type="password"
+              matInput
+              placeholder="Password"
+              formControlName="password_confirmation"
+              (keyup)="onKey($event)"
+              minlength="8"
+            />
+  
+            <mat-error> Password length should be min 8 digit </mat-error>
+          </mat-form-field>
+  
+          <button
+            mat-button
+            color="primary"
+            class="btn btn-primary text-light py-1"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
