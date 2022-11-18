@@ -1,23 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+import {FlatTreeControl} from '@angular/cdk/tree';
+
+
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
 })
+
 export class SidenavComponent implements OnInit {
-  toggling:boolean= this.auth.toggling;
+
+  items = ['Employee'];
+  expandedIndex = 0;
+  role_id:any;
   constructor(
     private auth:AuthService
-  ) { }
-
+    ){}
   ngOnInit(){
-    this.toggle()
+    this.role_id = localStorage.getItem('role_id')
+    
   }
-  role = localStorage.getItem('role')
-  toggle(){
-    this.toggling = !this.toggling
-    console.log(this.toggling)
-  }
+
 }

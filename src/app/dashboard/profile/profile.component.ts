@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { login } from 'src/app/modals/modals';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -12,18 +13,15 @@ export class ProfileComponent implements OnInit {
     private auth: AuthService
   ) { }
 
+  profileData!:any;
+
   ngOnInit(): void {
-    // this.auth.roles().subscribe((res)=>console.log("Profile",res))
-    // console.log(localStorage.getItem('access_token'))
-    this.auth.roles().subscribe((res:any)=>{
-      // this.roles= res;
-      //  console.log("AAAAAAAAA",res.roles);       ****
-        // const {roles} = res;
-     })
-    // const {roles}= this.roles;
-    // console.log(this.roles)
-
-
+      console.log("PROFILE DATA FROM LOCAL STORAGE",localStorage.getItem('personalUserData'))
+      // this.profileData = localStorage.getItem( JSON.parse('personalUserData')) 
+  
+      this.profileData = JSON.parse(localStorage.getItem('personalUserData') || '{}').map((res:login)=>res);
+      // console.log("............",this.profileData)
+   
   }
 
 }

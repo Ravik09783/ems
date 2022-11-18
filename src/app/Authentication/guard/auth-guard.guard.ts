@@ -13,11 +13,11 @@ export class AuthGuardGuard implements CanActivate {
   ){}
   canActivate(){
     if(this.auth.isLoggedIn()){
-      alert("Logged in Successful")
+      // alert("Logged in Successful")
       return true;
     }
     else
-    alert("Please login first")
+    // alert("Please login first")
     
     {this.router.navigate(['login'])
     return false;}

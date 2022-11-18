@@ -24,6 +24,7 @@ element.style {
     background-size: cover;
     background-position:center;
     background-repeat: no-repeat;
+    background-clip: border-box;
 }
 .example-form{
     width: 80%;

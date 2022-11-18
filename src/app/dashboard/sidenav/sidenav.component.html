@@ -1,71 +1,103 @@
 
-    <nav class="sidebar"[class.close]="toggling">
+    <nav class="sidebar">
       <header>
         <div class="d-flex justify-content-center align-items-center">
             <img src="../../../assets//img//logo.png" class="mx-2 company-logo" alt="">
-            <h3 style="color: #f8962a;" [class.hide]="toggling">Glocify </h3>
+            <h3 style="color: #f8962a;">Glocify </h3>
         </div>
 
       </header>
 
       <div class="menu-bar">
         <div class="menu">
-          <p class="menu-p">MENU</p>
-          <ul class="menu-links">
+          <!-- <p class="menu-p">MENU</p> -->
+          <ul class="menu-links pt-2">
             <li class="nav-link">
-              <a class="accordion">
+
+              <a class="accordion" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <i class="mdi mdi-speedometer"></i>
                 <span class="text nav-text" routerLink="../dashboard">Dashboard</span>
               </a>
+
            
             </li>
 
             <li class="nav-link">
-              <a >
+              <a routerLinkActive="active">
                 <i class="mdi mdi-view-grid-plus-outline"></i>
                 <span class="text nav-text" routerLink="../dashboard/profile">Profile</span>
               </a>
             </li>
 
-            <li class="nav-link">
-              <a routerLink="/dashboard/add-member">
+            <li class="nav-link" *ngIf="role_id <= 3">
+              <a routerLink="/dashboard/add-member" routerLinkActive="active">
                 <i class="mdi mdi-view-carousel-outline"></i>
                 <span class="text nav-text">Add Member</span>
               </a>
             </li>
           </ul>
-          <p class="menu-p">Pages</p>
-          <ul class="menu-links">
-            <li class="nav-link">
-              <a class="accordion" >
-                <i class="mdi mdi-account-circle-outline"></i>
-                <span class="text nav-text">Authentication</span>
-              </a>
-              <ul class="panel">
-                <li><a >Sign IN</a></li>
-              </ul>
-            </li>
-
-            <li class="nav-link">
-              <a >
-                <i class="mdi mdi-sticker-text-outline"></i>
-                <span class="text nav-text">Pages</span>
-              </a>
-            </li>
-
-            <li class="nav-link">
-              <a >
-                <i class="ri-rocket-line"></i>
-                <span class="text nav-text">Landing</span>
-              </a>
-            </li>
-          </ul>
+          <cdk-accordion class="example-accordion">
+            <cdk-accordion-item
+              *ngFor="let item of items; let index = index;"
+              #accordionItem="cdkAccordionItem"
+              class="example-accordion-item"
+              role="button"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index">
+              <div class="example-accordion-item-header" (click)="accordionItem.toggle()" routerLinkActive="active" *ngIf="role_id <= 3">
+                {{ item }}
+                <!-- <span class="example-accordion-item-description">
+                  Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+                </span> -->
+              </div>
+              <div
+                class="example-accordion-item-body"
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-' + index"
+                [attr.aria-labelledby]="'accordion-header-' + index">
+                
+                <ul>
+                  <!-- <li routerLinkActive="active"  routerLink="../dashboard">Employee Profile</li> -->
+                  <li routerLinkActive="active"  routerLink="./emp-list"  >Employee List</li>
+                  <!-- <li routerLinkActive="active"  routerLink="../dashboard">Employee Profile</li> -->
+                </ul>
+              </div>
+            </cdk-accordion-item>
+          </cdk-accordion>
+       
         </div>
- 
+
+
+
+
+
+
+     
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
       </div>
     </nav>
 
  
-
-
+  
 

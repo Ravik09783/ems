@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './authentication/login/login.component';
-import { SignupComponent } from './authentication/signup/signup.component';
 import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './authentication/not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +23,6 @@ import {MatSelectModule} from '@angular/material/select';
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent,
     ForgotPasswordComponent,
     NotFoundComponent
   ],

@@ -1,4 +1,4 @@
-<div class="custom-padding">
+<!-- <div class="custom-padding">
     <section class="col-padding">
       <ul class="four-dived">
         <li>
@@ -79,4 +79,63 @@
         </li>
       </ul>
     </section>
+  </div> -->
+  <div class="dashboard d-flex">
+    <h3>Dashboard</h3>
+    <div>
+      <button mat-raised-button color="primary" (click)="punchIn()"> Punch In</button>
+    </div>
   </div>
+
+ <div class="parent" *ngIf="roleID < 3 && roleID >=1">
+  <div class="child shadow ">
+    <div class="main">
+      <div class="img text-center d-flex justify-content-center align-items-center">
+        <i class="fa-regular fa-user"></i>
+      </div>
+      <div class="value align-items-center">
+        <div><h5>{{totalEmployee}}</h5></div>
+        <div><p>Total Employees</p></div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="child shadow ">
+    <div class="main">
+      <div class="img text-center d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-building"></i>
+      </div>
+      <div class="value align-items-center">
+        <div><h5>{{role}}</h5></div>
+        <div><p>Total Department</p></div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="child shadow ">
+    <div class="main">
+      <div class="img text-center d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-person-walking-arrow-right"></i>
+      </div>
+      <div class="value align-items-center">
+        <div><h5>6</h5></div>
+        <div><p>Total Leave Request</p></div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="child shadow ">
+    <div class="main">
+      <div class="img text-center d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-person-through-window"></i>
+      </div>
+      <div class="value align-items-center">
+        <div><h5>3</h5></div>
+        <div><p>On Leave Today</p></div>
+      </div>
+      
+    </div>
+  </div>
+ </div>

@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-8 col-sm-12 abc text-center">
-      <img src="../../../assets//img/logo.png" alt="">
+    <div class="col-lg-8 col-md-6 col-sm-12 abc text-center">
+      <img src="../../../assets//img/logo.png" alt="" />
     </div>
     <div
-      class="col-md-4 col-sm-12 loginform "
+      class="col-lg-4 col-md-6 col-sm-12 loginform"
       fxLayoutAlign="center center"
       fxLayout="column"
     >
@@ -22,32 +22,9 @@
           <div>Login Page</div>
         </div>
 
-        
-        <mat-form-field >
-          <mat-label>Select Your Role</mat-label>
-          <mat-select [(value)]="selectedValue">
-            <!-- <mat-option>None</mat-option> -->
-            <mat-option  *ngFor="let brand of brands" [value]="brand.value">
-               {{ brand.viewValue }}
-              </mat-option>
-            <!-- <mat-option value="option2">Manager</mat-option>
-            <mat-option value="option3">HR</mat-option>
-            <mat-option value="option4">Employee</mat-option> -->
-          </mat-select>
-        </mat-form-field>
-
-
-
         <mat-form-field class="example-full-width">
           <mat-label>Email</mat-label>
-          <input type="email" matInput formControlName="email"
-          email="true"/>
-          <!-- <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-            Please enter a valid email address
-          </mat-error> -->
-          <!-- <mat-error *ngIf="emailFormControl.hasError('required')">
-            Email is <strong>required</strong>
-          </mat-error> -->
+          <input type="email" matInput formControlName="email" email="true" />
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
@@ -60,6 +37,7 @@
             minlength="6"
           />
         </mat-form-field>
+
         <button
           mat-button
           color="primary"
@@ -68,14 +46,12 @@
         >
           Submit
         </button>
+
         <div class="signup">
           <small routerLink="/signup"> Sign Up Here</small>
-    
-          </div>
+        </div>
+        
       </form>
-     
     </div>
- 
   </div>
 </div>
-<p id="p">{{selectedValue}}</p>

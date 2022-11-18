@@ -19,13 +19,13 @@ element.style {
   font-weight: 500;
 }
 
-.abc{
+/* .abc{
     background-color: blueviolet;
     background-image: url('./../../../assets//img/management.jpg');
     background-size: cover;
     background-position:center;
     background-repeat: no-repeat;
-}
+} */
 .example-form{
     width: 80%;
 }

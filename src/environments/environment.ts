@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   baseUrl: 'http://3.108.151.73/api/login',
   rolesURL:'http://3.108.151.73/api/roles',
-  register:'http://3.108.151.73/api/register'
+  register:'http://3.108.151.73/api/register',
+  empList:'http://3.108.151.73/api/all-employees'
 };
 
 /*

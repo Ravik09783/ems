@@ -14,8 +14,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInput, MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
-
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTableModule} from '@angular/material/table';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from '@angular/material/icon';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
+import { EmpListComponent } from './employee/emp-list/emp-list.component';
+import { EmpProfileComponent } from './employee/emp-profile/emp-profile.component';
+import { EmpEditComponent } from './employee/emp-edit/emp-edit.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +31,9 @@ import { MatCardModule } from '@angular/material/card';
     SidenavComponent,
     HeaderComponent,
     AddMemberComponent,
+    EmpListComponent,
+    EmpProfileComponent,
+    EmpEditComponent,
    
   ],
   imports: [
@@ -37,7 +46,15 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     FlexLayoutModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatTableModule,
+    MatTreeModule,
+    MatIconModule,
+    CdkAccordionModule,
+
+
   ]
 })
 export class DashboardModule { }

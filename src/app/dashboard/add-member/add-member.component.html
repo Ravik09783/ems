@@ -1,8 +1,8 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="role_id <= 3">
     <div class="row">
-      <div class="col-md-8 col-sm-12 abc"></div>
+      <!-- <div class="col-md-8 col-sm-12 abc"></div> -->
       <div
-        class="col-md-4 col-sm-12 loginform"
+        class="col-md-12 col-sm-12 loginform"
         fxLayoutAlign="center center"
         fxLayout="column"
       >
@@ -17,21 +17,116 @@
           </div>
   
           <div class="text-center leginText">
-            <div>Welcome to team &#128513;</div>
+            <div>Welcome to team </div>
           </div>
-          <mat-form-field>
-            <mat-label>Select Your Role</mat-label>
-            <mat-select [(value)]="selectedValue">                            
-              <mat-option  *ngFor="let role of brand" [value]="role.name">
-                 {{ role.name }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+
+          <div class="row">
+
+            <mat-form-field class="col-md-5">
+              <mat-label>Select Your Role</mat-label>
+              <mat-select [(value)]="selectedValue">                            
+                <mat-option  *ngFor="let role of brand" [value]="role.name">
+                   {{ role.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+              <div class="col-sm-2"></div>
+
+            <mat-form-field class="example-full-width col-md-5">
+              <mat-label>Name</mat-label>
+              <input type="text" matInput formControlName="name" />
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width col-md-5">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput formControlName="email" email="true" />
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <div class="col-sm-2"></div>
+
+            <mat-form-field class="example-full-width col-md-5">
+              <mat-label>Password</mat-label>
+              <input
+                type="password"
+                matInput
+                placeholder="Password"
+                formControlName="password"
+                minlength="8"
+              />
+    
+              <mat-error> Password length should be min 8 digit </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width col-md-5">
+              <mat-label>Confirm Password</mat-label>
+              <input
+                type="password"
+                matInput
+                placeholder="Password"
+                formControlName="password_confirmation"
+                (keyup)="onKey($event)"
+                minlength="8"
+              />
+    
+              <mat-error> Password length should be min 8 digit </mat-error>
+            </mat-form-field>
+
+            <div class="col-sm-2"></div>
+
+            <mat-form-field class="example-full-width col-md-5">
+              <mat-label>Department</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="Department"
+                formControlName="department"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width col-md-5">
+              <mat-label>Employee Status</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="Employee Status"
+                formControlName="status"
+              />
+            </mat-form-field>
+            
+            <div class="col-sm-2"></div>
+
+            <mat-form-field class="example-full-width col-md-5">
+              <mat-label>Gender</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="Gender"
+                formControlName="gender"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width col-md-12">
+              <mat-label>Address</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="Address"
+                formControlName="address"
+              />
+            </mat-form-field>
+
+          <input type="file" (change)="fileupload($event)">
+    
+    
+
+          </div>
+        
   
-          <mat-form-field class="example-full-width">
-            <mat-label>Name</mat-label>
-            <input type="text" matInput formControlName="first" />
-          </mat-form-field>
+        
   
           <!-- <mat-form-field class="example-full-width">
             <mat-label>Last Name</mat-label>
@@ -46,42 +141,10 @@
             <input type="text" matInput formControlName="address" />
           </mat-form-field> -->
   
-          <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
-            <input type="email" matInput formControlName="email" email="true" />
-            <!-- <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                Please enter a valid email address
-              </mat-error> -->
-            <mat-error *ngIf="emailFormControl.hasError('required')">
-              Email is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
+       
   
-          <mat-form-field class="example-full-width">
-            <mat-label>Password</mat-label>
-            <input
-              type="password"
-              matInput
-              placeholder="Password"
-              formControlName="password"
-              minlength="8"
-            />
-  
-            <mat-error> Password length should be min 8 digit </mat-error>
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <mat-label>Confirm Password</mat-label>
-            <input
-              type="password"
-              matInput
-              placeholder="Password"
-              formControlName="password_confirmation"
-              (keyup)="onKey($event)"
-              minlength="8"
-            />
-  
-            <mat-error> Password length should be min 8 digit </mat-error>
-          </mat-form-field>
+          
+       
   
           <button
             mat-button

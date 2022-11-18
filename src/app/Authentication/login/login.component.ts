@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators,FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
+import { login } from 'src/app/modals/modals';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -16,16 +17,12 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('access_token') && localStorage.getItem('role')){
+    if(localStorage.getItem('access_token') && localStorage.getItem('role_id')){
       this.router.navigate(['./dashboard'])
     }
-    // this.auth.print()
-    // this.auth.roles().subscribe((res)=>console.log("Hello",res))
   }
 
-  selectedValue!:string;
-
-  abc:any;
+  addRole!:any;
 
     loginForm= new FormGroup({
     email: new FormControl("", Validators.required),
@@ -34,60 +31,54 @@ export class LoginComponent implements OnInit {
   })
 
   onSubmit(){
-    // var ans = this.loginForm.value
-    // ans.role= this.selectedValue
+
+    // console.log("*********",this.loginForm.value)
 
     if(!this.loginForm.value.email && !this.loginForm.value.password){
       alert("Please fill all the details")
     }
     else{
-      this.abc = this.loginForm.value;
-      this.auth.login(this.abc).subscribe((res:any)=>{
-        console.log("RESULT",res)
-        // console.log("RES_______",res)
-        const {access_token}= res;
-        const {user} = res;
-        console.log("User", user.id)
-        localStorage.setItem("role", user.id)
-        // const {result}= res;
-        console.log(access_token)
-        localStorage.setItem("access_token",access_token)
-        // console.log("123123",result.password)
-        // this.router.navigate(['/dashboard'])
-        // this.loginForm.reset()
+     
+      this.addRole = this.loginForm.value;
+      this.auth.login(this.addRole).subscribe((res:login)=>{
+        console.log("Login Response:", res)
+        
+        console.log("response after login", res.personalUserData[0].id)
 
-        setTimeout(()=>{
-          this.router.navigate(['/dashboard'])
-        })
+        const {access_token}= res;
+
+        const {personalUserData} = res
+        localStorage.setItem("personalUserData", JSON.stringify(personalUserData))
+
+        console.log(".............................................................", personalUserData[0].role_id)
+
+        if(personalUserData[0].role_id < 4){
+
+          const {allEmployeeDepartments}=res
+          localStorage.setItem("allEmployeeDepartments", JSON.stringify(allEmployeeDepartments))
+          
+          const {allEmployeeStatus}=res
+          localStorage.setItem("allEmployeeStatus", JSON.stringify(allEmployeeStatus))
+          
+          const {allEmployees}=res
+          localStorage.setItem("allEmployees", JSON.stringify(allEmployees))
+        }
+
+    
+
+   
+        localStorage.setItem("access_token",access_token)
+        localStorage.setItem("role_id",res.personalUserData[0].role_id)
+        // localStorage.setItem("allEmployees", res.allEmployees[0])
+        console.log("res.personalUserData[0].role_id",typeof(res.personalUserData[0].role_id))
+        
+        this.router.navigate(['/dashboard'])
+
       })
   
-      // IMPORTANT CODE
-  
-      // this.abc.role = this.selectedValue;
-      // console.log("99999999999", this.abc)
-      // console.log("444444",this.loginForm.value)
-      // console.log(this.selectedValue)
-      
     }
 
-
-
   }
-
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-
-  brands = [
-    { value: 'HR', viewValue: 'HR' },
-    { value: 'CEO', viewValue: 'CEO' },
-    { value: 'MANAGER', viewValue: 'MANAGER' },
-    { value: 'EMPLOYEE', viewValue: 'EMPLOYEE' },
-  ];
-  // hello(){
-  //   console.log("hello world")
-  // }
-
-
-
-
 }
 

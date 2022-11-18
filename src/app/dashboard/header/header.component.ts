@@ -21,8 +21,9 @@ export class HeaderComponent implements OnInit {
     console.log("form header",this.toggling)
   }
   logout(){
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('role');
+    // localStorage.removeItem('access_token');
+    // localStorage.removeItem('role_id');
+    localStorage.clear()
     this.router.navigate(['../login'])
   }
 
