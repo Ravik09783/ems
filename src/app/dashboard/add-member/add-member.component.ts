@@ -18,32 +18,15 @@ export class AddMemberComponent implements OnInit {
   brand:any;
   profilePic:any;
   role_id!:any;
+  allroles:any;
   ngOnInit(): void {
-    this.auth.roles().subscribe((res:any)=>
-    {
-      console.log(res)
-      const {roles}= res;
-      this.brand = roles;
-      this.brand= this.brand.data
-      console.log("this.brand", this.brand)
-      
-    }
-    )
 
-    this.role_id = localStorage.getItem(JSON.parse('role_id'))
+    this.role_id = JSON.parse(localStorage.getItem('role_id') || '{}');
+    this.allroles = JSON.parse(localStorage.getItem('allRoles') || '{}');
   }
   selectedValue!:string;
-  // cpassword!:string;
   cpassword!: string;
   abc:any;
-  // brands = [
-  //   { value: 'HR', viewValue: 'HR' },
-  //   { value: 'CEO', viewValue: 'CEO' },
-  //   { value: 'MANAGER', viewValue: 'MANAGER' },
-  //   { value: 'EMPLOYEE', viewValue: 'EMPLOYEE' },
-  // ];
-
-
 
   signupForm= new FormGroup({
     email: new FormControl("", Validators.required),
@@ -54,9 +37,7 @@ export class AddMemberComponent implements OnInit {
     address: new FormControl("", Validators.required),
     name: new FormControl("", Validators.required),
     department: new FormControl("", Validators.required),
-    // lname: new FormControl("", Validators.required),
-    // address: new FormControl("", Validators.required),
-    // designation: new FormControl("", Validators.required),
+
   })
 
 
@@ -66,7 +47,6 @@ export class AddMemberComponent implements OnInit {
 
 
   onSubmit(){
-    console.log(this.signupForm.value)
 
     if(
       this.signupForm.value.password==this.signupForm.value.password_confirmation 
@@ -74,26 +54,19 @@ export class AddMemberComponent implements OnInit {
       && this.signupForm.value.password
       && this.signupForm.value.email)
       {
-        console.log("111111111",this.signupForm.value)
         this.abc= this.signupForm.value;
         this.abc.role = this.selectedValue
  
         const a = document.getElementById("cpassword")
-        // console.log(this.cpassword)
-        // console.log(this.signupForm.value.password)
-        console.log("ANSWER",this.abc)
         this.brand.map((res:any)=>{ if(res.name==this.selectedValue){
           this.abc.role_id= res.id
         }})
 
-        console.log("ANSWER22222222",this.abc)
         delete this.abc['role']
-        console.log("ANSWER3333333",this.abc)
         this.auth.register(this.abc).subscribe((res)=>{console.log(res)})
 
       }
       else{
-        // this.signupForm.reset()
         alert("Form is not filled/password doest matched") 
       }
 
@@ -103,7 +76,6 @@ export class AddMemberComponent implements OnInit {
 
 
   fileupload(event:any){
-    console.log("file upload value",event.target.value)
     this.profilePic = event.target.value
   }
  

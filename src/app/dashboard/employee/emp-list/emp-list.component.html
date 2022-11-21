@@ -1,19 +1,21 @@
 
-  <table class="table" style="background-color: black!important; color:white;">
+  <table class="table p-3 m-5 shadow">
     <thead>
       <tr>
         <th scope="col">Role id</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
 
-      <tr *ngFor="let user of allEmp">
+      <tr *ngFor="let user of allEmp.data">
         <!-- <th scope="row">1</th> -->
         <td>{{user.id}}</td>
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
+        <td><button class="btn btn-warning">Edit</button> <button class="btn btn-danger mx-3">Delete</button></td>
       </tr>
       
     </tbody>

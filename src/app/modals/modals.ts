@@ -74,6 +74,13 @@ export interface login {
       updated_at: string;
     }
   ];
+  
+  allRoles: [{
+    id: number
+    name: string
+    created_at: null | number | string
+    updated_at: null | number | string
+  }]
 }
 
 export interface addMember {
@@ -82,3 +89,4 @@ export interface addMember {
   password: string;
   password_confirmation: string;
 }
+

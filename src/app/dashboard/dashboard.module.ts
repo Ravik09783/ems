@@ -22,7 +22,8 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
 import { EmpListComponent } from './employee/emp-list/emp-list.component';
 import { EmpProfileComponent } from './employee/emp-profile/emp-profile.component';
 import { EmpEditComponent } from './employee/emp-edit/emp-edit.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogBoxComponent } from './header/dialog-box/dialog-box.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -34,6 +35,7 @@ import { EmpEditComponent } from './employee/emp-edit/emp-edit.component';
     EmpListComponent,
     EmpProfileComponent,
     EmpEditComponent,
+    DialogBoxComponent,
    
   ],
   imports: [
@@ -53,7 +55,8 @@ import { EmpEditComponent } from './employee/emp-edit/emp-edit.component';
     MatTreeModule,
     MatIconModule,
     CdkAccordionModule,
-
+    MatDialogModule,
+    
 
   ]
 })

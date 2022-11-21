@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
       this.auth.login(this.addRole).subscribe((res:login)=>{
         console.log("Login Response:", res)
         
-        console.log("response after login", res.personalUserData[0].id)
+        // console.log("response after login", res.personalUserData[0].id)
 
         const {access_token}= res;
 
@@ -62,6 +62,9 @@ export class LoginComponent implements OnInit {
           
           const {allEmployees}=res
           localStorage.setItem("allEmployees", JSON.stringify(allEmployees))
+
+          const {allRoles}=res
+          localStorage.setItem("allRoles", JSON.stringify(allRoles))
         }
 
     

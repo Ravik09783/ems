@@ -25,7 +25,7 @@
             <mat-form-field class="col-md-5">
               <mat-label>Select Your Role</mat-label>
               <mat-select [(value)]="selectedValue">                            
-                <mat-option  *ngFor="let role of brand" [value]="role.name">
+                <mat-option  *ngFor="let role of allroles" [value]="role.name">
                    {{ role.name }}
                 </mat-option>
               </mat-select>
@@ -125,27 +125,6 @@
 
           </div>
         
-  
-        
-  
-          <!-- <mat-form-field class="example-full-width">
-            <mat-label>Last Name</mat-label>
-            <input type="text" matInput formControlName="lname" />
-          </mat-form-field> -->
-  
-      
-  
-  
-          <!-- <mat-form-field class="example-full-width">
-            <mat-label>Address</mat-label>
-            <input type="text" matInput formControlName="address" />
-          </mat-form-field> -->
-  
-       
-  
-          
-       
-  
           <button
             mat-button
             color="primary"

@@ -1,5 +1,9 @@
 
     <nav class="sidebar">
+      <div class="search">
+        <div></div>
+        <div class="bar-icon"> <i class="fa fa-car"></i></div>
+      </div>
       <header>
         <div class="d-flex justify-content-center align-items-center">
             <img src="../../../assets//img//logo.png" class="mx-2 company-logo" alt="">
@@ -10,7 +14,6 @@
 
       <div class="menu-bar">
         <div class="menu">
-          <!-- <p class="menu-p">MENU</p> -->
           <ul class="menu-links pt-2">
             <li class="nav-link">
 
@@ -48,9 +51,7 @@
               [attr.aria-controls]="'accordion-body-' + index">
               <div class="example-accordion-item-header" (click)="accordionItem.toggle()" routerLinkActive="active" *ngIf="role_id <= 3">
                 {{ item }}
-                <!-- <span class="example-accordion-item-description">
-                  Click to {{ accordionItem.expanded ? 'close' : 'open' }}
-                </span> -->
+        
               </div>
               <div
                 class="example-accordion-item-body"
@@ -60,9 +61,7 @@
                 [attr.aria-labelledby]="'accordion-header-' + index">
                 
                 <ul>
-                  <!-- <li routerLinkActive="active"  routerLink="../dashboard">Employee Profile</li> -->
-                  <li routerLinkActive="active"  routerLink="./emp-list"  >Employee List</li>
-                  <!-- <li routerLinkActive="active"  routerLink="../dashboard">Employee Profile</li> -->
+                  <li routerLinkActive="active"  routerLink="./emp-list" [routerLinkActiveOptions]="{exact: true}" >Employee List</li>
                 </ul>
               </div>
             </cdk-accordion-item>
