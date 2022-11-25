@@ -8,8 +8,10 @@ import { login } from '../modals/modals';
 })
 export class AuthService {
   link = environment.baseUrl;
-  Register = environment.register;
-  empLists = environment.empList
+  // Register = environment.register;
+  // empLists = environment.empList
+
+
   toggling: boolean = true;
   constructor(private http: HttpClient) {}
 
@@ -45,23 +47,23 @@ export class AuthService {
     return !!localStorage.getItem('access_token');
   }
 
-  register(data: any) {
-    var header = {
-      headers: new HttpHeaders().set(
-        'Authorization',
-        `Bearer ${this.accessToken}`
-      ),
-    };
-    return this.http.post<any>(this.Register, data, header);
-  }
+  // register(data: any) {
+  //   var header = {
+  //     headers: new HttpHeaders().set(
+  //       'Authorization',
+  //       `Bearer ${this.accessToken}`
+  //     ),
+  //   };
+  //   return this.http.post<any>(this.Register, data, header);
+  // }
 
-  empList() {
-    var header = {
-      headers: new HttpHeaders().set(
-        'Authorization',
-        `Bearer ${this.accessToken}`
-      ),
-    };
-    return this.http.get(this.empLists, header)
-  }
+  // empList() {
+  //   var header = {
+  //     headers: new HttpHeaders().set(
+  //       'Authorization',
+  //       `Bearer ${this.accessToken}`
+  //     ),
+  //   };
+  //   return this.http.get(this.empLists, header)
+  // }
 }

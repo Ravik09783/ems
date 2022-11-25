@@ -3,6 +3,7 @@ import {FormControl, Validators,FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
 import { login } from 'src/app/modals/modals';
 import { AuthService } from 'src/app/services/auth.service';
+import { SnackbarService } from 'ngx-snackbar';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router:Router,
-    private auth: AuthService
+    private auth: AuthService,
+    private snackbarService: SnackbarService
   ) { }
 
   ngOnInit(): void {
@@ -50,7 +52,6 @@ export class LoginComponent implements OnInit {
         const {personalUserData} = res
         localStorage.setItem("personalUserData", JSON.stringify(personalUserData))
 
-        console.log(".............................................................", personalUserData[0].role_id)
 
         if(personalUserData[0].role_id < 4){
 
@@ -81,7 +82,95 @@ export class LoginComponent implements OnInit {
   
     }
 
+
+
+
+    // const _this = this;
+    this.snackbarService.add({
+      msg: '<strong>Login Success</strong>',
+      timeout: 5000,
+      action: {
+        text: 'Close',
+        onClick: (snack:any) => {
+          console.log('dismissed: ' + snack.id);
+          
+          // _this.undo();
+        },
+      },
+      onAdd: (snack:any) => {
+        console.log('added: ' + snack.id);
+      },
+      onRemove: (snack:any) => {
+        console.log('removed: ' + snack.id);
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+
+
+
+
+  // add() {
+  //   const _this = this;
+  //   this.snackbarService.add({
+  //     msg: '<strong>Message sent.</strong>',
+  //     timeout: 5000,
+  //     action: {
+  //       text: 'Undo',
+  //       onClick: (snack:any) => {
+  //         console.log('dismissed: ' + snack.id);
+          
+  //         _this.undo();
+  //       },
+  //     },
+  //     onAdd: (snack:any) => {
+  //       console.log('added: ' + snack.id);
+  //     },
+  //     onRemove: (snack:any) => {
+  //       console.log('removed: ' + snack.id);
+  //     }
+  //   });
+  // }
+
+  // clear() {
+  //   this.snackbarService.clear();
+  // }
+  
+  // undo() {
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 

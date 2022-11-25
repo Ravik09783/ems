@@ -19,6 +19,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { DashboardModule } from './dashboard/dashboard.module';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {SnackbarModule} from 'ngx-snackbar';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatSelectModule,
     HttpClientModule,
     MatSnackBarModule,
-    
+    NgxUiLoaderModule,
+    SnackbarModule.forRoot()
 
   ],
   providers: [],

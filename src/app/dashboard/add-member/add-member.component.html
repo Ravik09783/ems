@@ -12,13 +12,13 @@
           [formGroup]="signupForm"
           (ngSubmit)="onSubmit()"
         >
-          <div class="text-center lock">
+          <!-- <div class="text-center lock">
             <i class="fa-solid fa-unlock"></i>
           </div>
-  
-          <div class="text-center leginText">
+   -->
+          <!-- <div class="text-center leginText">
             <div>Welcome to team </div>
-          </div>
+          </div> -->
 
           <div class="row">
 
@@ -41,9 +41,9 @@
             <mat-form-field class="example-full-width col-md-5">
               <mat-label>Email</mat-label>
               <input type="email" matInput formControlName="email" email="true" />
-              <mat-error *ngIf="emailFormControl.hasError('required')">
+              <!-- <mat-error *ngIf="emailFormControl.hasError('required')">
                 Email is <strong>required</strong>
-              </mat-error>
+              </mat-error> -->
             </mat-form-field>
 
             <div class="col-sm-2"></div>
@@ -109,6 +109,54 @@
               />
             </mat-form-field>
 
+
+
+            
+            <div class="col-md-1"></div>
+
+          <mat-form-field class="example-full-width col-md-3">
+              <mat-label>Designation ID</mat-label>
+              <input type="email" matInput formControlName="designation_id" email="true" />
+              <!-- <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error> -->
+            </mat-form-field>
+
+            <div class="col-md-1"></div>
+
+            <mat-form-field class="example-full-width col-md-4">
+              <mat-label>Employee ID</mat-label>
+              <input type="email" matInput formControlName="employee_id" email="true" />
+              <!-- <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error> -->
+            </mat-form-field>
+
+        
+
+            
+            <div class="col-md-2"></div>
+
+            <mat-form-field class="example-full-width col-md-5">
+              <mat-label>About Me</mat-label>
+              <input type="email" matInput formControlName="about_me" email="true" />
+              <!-- <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error> -->
+            </mat-form-field>
+     
+
+   
+   
+
+
+
+
+
+
+
+
+
             <mat-form-field class="example-full-width col-md-12">
               <mat-label>Address</mat-label>
               <input
@@ -121,7 +169,8 @@
 
           <input type="file" (change)="fileupload($event)">
     
-    
+         
+
 
           </div>
         

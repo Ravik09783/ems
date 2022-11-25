@@ -13,7 +13,7 @@ export class AuthGuardGuard implements CanActivate {
   ){}
   canActivate(){
     if(this.auth.isLoggedIn()){
-      alert("Logged in Successful")
+      // alert("Logged in Successful")
       return true;
     }
     else

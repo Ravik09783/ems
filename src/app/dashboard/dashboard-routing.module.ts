@@ -18,7 +18,7 @@ const routes: Routes = [
             {path:'profile', component:ProfileComponent},
             {path:'add-member', component:AddMemberComponent},
             {path:'emp-list', component:EmpListComponent},
-            {path:'emp-edit/:', component:EmpEditComponent},
+            {path:'emp-edit/:id', component:EmpEditComponent},
             {path:'**', component:NotFoundComponent}
         ]
     }

@@ -37,6 +37,9 @@ export class AddMemberComponent implements OnInit {
     address: new FormControl("", Validators.required),
     name: new FormControl("", Validators.required),
     department: new FormControl("", Validators.required),
+    about_me: new FormControl("", Validators.required),
+    employee_id: new FormControl("", Validators.required),
+    designation_id: new FormControl("", Validators.required),
 
   })
 
@@ -54,16 +57,13 @@ export class AddMemberComponent implements OnInit {
       && this.signupForm.value.password
       && this.signupForm.value.email)
       {
+        console.log("SignUp form Value:", this.signupForm.value)
         this.abc= this.signupForm.value;
         this.abc.role = this.selectedValue
- 
-        const a = document.getElementById("cpassword")
-        this.brand.map((res:any)=>{ if(res.name==this.selectedValue){
-          this.abc.role_id= res.id
-        }})
 
-        delete this.abc['role']
-        this.auth.register(this.abc).subscribe((res)=>{console.log(res)})
+
+        // delete this.abc['role']
+        // this.auth.register(this.abc).subscribe((res)=>{console.log(res)})
 
       }
       else{
