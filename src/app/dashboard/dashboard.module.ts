@@ -57,6 +57,7 @@ import { SnackbarModule } from 'ngx-snackbar';
     MatIconModule,
     CdkAccordionModule,
     MatDialogModule,
+    ReactiveFormsModule,
     SnackbarModule.forRoot(),
     
 

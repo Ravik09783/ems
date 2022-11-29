@@ -24,6 +24,9 @@ export class AddMemberComponent implements OnInit {
     this.role_id = JSON.parse(localStorage.getItem('role_id') || '{}');
     this.allroles = JSON.parse(localStorage.getItem('allRoles') || '{}');
   }
+
+  selectedFile:any = null;
+
   selectedValue!:string;
   cpassword!: string;
   abc:any;
@@ -40,6 +43,7 @@ export class AddMemberComponent implements OnInit {
     about_me: new FormControl("", Validators.required),
     employee_id: new FormControl("", Validators.required),
     designation_id: new FormControl("", Validators.required),
+    profile_picture: new FormControl("", Validators.required)
 
   })
 
@@ -50,6 +54,11 @@ export class AddMemberComponent implements OnInit {
 
 
   onSubmit(){
+
+    const filedata = new FormData();
+    filedata.append('image', this.selectedFile, this.selectedFile.name)
+    console.log("=================", filedata)
+
 
     if(
       this.signupForm.value.password==this.signupForm.value.password_confirmation 
@@ -76,7 +85,8 @@ export class AddMemberComponent implements OnInit {
 
 
   fileupload(event:any){
-    this.profilePic = event.target.value
+    console.log(event)
+    this.profilePic = event.target.files[0]
   }
  
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);

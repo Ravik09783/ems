@@ -63,6 +63,23 @@ export class EmployeesService {
     }
 
 
+    updateEmployeeInfo(id:number, data:any){
+      var header = {
+        headers: new HttpHeaders().set(
+          'Authorization',
+          `Bearer ${this.accessToken}`
+        ),
+      };
+      data._method = "PUT";
+      delete data['password']
+      console.log("Required Fields", data)
+      // console.log("FFFFFF", data)
+      // console.log("FFFFFF", header)
+
+      return this.http.post(`${this.employees}/${id}`,data, header)
+
+    }
+
 
 
 }

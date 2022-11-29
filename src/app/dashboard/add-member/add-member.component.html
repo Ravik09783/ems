@@ -167,7 +167,7 @@
               />
             </mat-form-field>
 
-          <input type="file" (change)="fileupload($event)">
+          <input type="file" onchange="console.log(event.target.files)" formControlName="profile_picture">
     
          
 
