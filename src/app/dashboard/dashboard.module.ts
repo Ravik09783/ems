@@ -25,6 +25,7 @@ import { EmpEditComponent } from './employee/emp-edit/emp-edit.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogBoxComponent } from './header/dialog-box/dialog-box.component';
 import { SnackbarModule } from 'ngx-snackbar';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -58,8 +59,8 @@ import { SnackbarModule } from 'ngx-snackbar';
     CdkAccordionModule,
     MatDialogModule,
     ReactiveFormsModule,
+    HttpClientModule,
     SnackbarModule.forRoot(),
-    
 
   ]
 })

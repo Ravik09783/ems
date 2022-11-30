@@ -1,189 +1,100 @@
-<div class="container-fluid" *ngIf="role_id <= 3">
-    <div class="row">
-      <!-- <div class="col-md-8 col-sm-12 abc"></div> -->
-      <div
-        class="col-md-12 col-sm-12 loginform"
-        fxLayoutAlign="center center"
-        fxLayout="column"
-      >
-        <form
-          class="example-form shadow p-4"
-          fxLayout="column"
-          [formGroup]="signupForm"
-          (ngSubmit)="onSubmit()"
-        >
-          <!-- <div class="text-center lock">
-            <i class="fa-solid fa-unlock"></i>
-          </div>
-   -->
-          <!-- <div class="text-center leginText">
-            <div>Welcome to team </div>
-          </div> -->
+<div class="container">
+  <div class="row">
+    <h2 class="text-center my-3">Edit Employees Details</h2>
+    <form [formGroup]="addForm" (ngSubmit)="addEmployee()">
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="exampleInputEmail1 ">Name</label>
+          <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="col-md-1"></div>
+        <div class="form-group col-md-3">
+          <label for="exampleInputPassword1">Role Id</label>
+          <input type="text" class="form-control"  formControlName="role_id">
+        </div>
+        <div class="col-md-1"></div>
+        <div class="form-group col-md-3">
+          <label for="exampleInputPassword1">Email</label>
+          <input type="email" class="form-control"   formControlName="email" placeholder="abc@gmail.com">
+        </div>
+      
 
-          <div class="row">
-
-            <mat-form-field class="col-md-5">
-              <mat-label>Select Your Role</mat-label>
-              <mat-select [(value)]="selectedValue">                            
-                <mat-option  *ngFor="let role of allroles" [value]="role.name">
-                   {{ role.name }}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-
-              <div class="col-sm-2"></div>
-
-            <mat-form-field class="example-full-width col-md-5">
-              <mat-label>Name</mat-label>
-              <input type="text" matInput formControlName="name" />
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width col-md-5">
-              <mat-label>Email</mat-label>
-              <input type="email" matInput formControlName="email" email="true" />
-              <!-- <mat-error *ngIf="emailFormControl.hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error> -->
-            </mat-form-field>
-
-            <div class="col-sm-2"></div>
-
-            <mat-form-field class="example-full-width col-md-5">
-              <mat-label>Password</mat-label>
-              <input
-                type="password"
-                matInput
-                placeholder="Password"
-                formControlName="password"
-                minlength="8"
-              />
-    
-              <mat-error> Password length should be min 8 digit </mat-error>
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width col-md-5">
-              <mat-label>Confirm Password</mat-label>
-              <input
-                type="password"
-                matInput
-                placeholder="Password"
-                formControlName="password_confirmation"
-                (keyup)="onKey($event)"
-                minlength="8"
-              />
-    
-              <mat-error> Password length should be min 8 digit </mat-error>
-            </mat-form-field>
-
-            <div class="col-sm-2"></div>
-
-            <mat-form-field class="example-full-width col-md-5">
-              <mat-label>Department</mat-label>
-              <input
-                type="text"
-                matInput
-                placeholder="Department"
-                formControlName="department"
-              />
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width col-md-5">
-              <mat-label>Employee Status</mat-label>
-              <input
-                type="text"
-                matInput
-                placeholder="Employee Status"
-                formControlName="status"
-              />
-            </mat-form-field>
-            
-            <div class="col-sm-2"></div>
-
-            <mat-form-field class="example-full-width col-md-5">
-              <mat-label>Gender</mat-label>
-              <input
-                type="text"
-                matInput
-                placeholder="Gender"
-                formControlName="gender"
-              />
-            </mat-form-field>
-
-
-
-            
-            <div class="col-md-1"></div>
-
-          <mat-form-field class="example-full-width col-md-3">
-              <mat-label>Designation ID</mat-label>
-              <input type="email" matInput formControlName="designation_id" email="true" />
-              <!-- <mat-error *ngIf="emailFormControl.hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error> -->
-            </mat-form-field>
-
-            <div class="col-md-1"></div>
-
-            <mat-form-field class="example-full-width col-md-4">
-              <mat-label>Employee ID</mat-label>
-              <input type="email" matInput formControlName="employee_id" email="true" />
-              <!-- <mat-error *ngIf="emailFormControl.hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error> -->
-            </mat-form-field>
-
-        
-
-            
-            <div class="col-md-2"></div>
-
-            <mat-form-field class="example-full-width col-md-5">
-              <mat-label>About Me</mat-label>
-              <input type="email" matInput formControlName="about_me" email="true" />
-              <!-- <mat-error *ngIf="emailFormControl.hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error> -->
-            </mat-form-field>
-     
-
-   
-   
-
-
-
-
-
-
-
-
-
-            <mat-form-field class="example-full-width col-md-12">
-              <mat-label>Address</mat-label>
-              <input
-                type="text"
-                matInput
-                placeholder="Address"
-                formControlName="address"
-              />
-            </mat-form-field>
-
-          <input type="file" onchange="console.log(event.target.files)" formControlName="profile_picture">
-    
-         
-
-
-          </div>
-        
-          <button
-            mat-button
-            color="primary"
-            class="btn btn-primary text-light py-1"
-            type="submit"
-          >
-            Submit
-          </button>
-        </form>
+      <div class="form-group col-md-4 my-3">
+        <label for="exampleInputEmail1 ">Password</label>
+        <input type="password" class="form-control" formControlName="password">
       </div>
+      <div class="col-md-1"></div>
+      <div class="form-group col-md-3 my-3">
+        <label for="exampleInputPassword1">Confirm Password</label>
+        <input type="password " class="form-control"  formControlName="password_confirmation">
+      </div>
+      <div class="col-md-1"></div>
+      <div class="form-group col-md-3 my-3">
+        <label for="exampleInputPassword1">Date Of Birth</label>
+        <input type="date" class="form-control"   formControlName="date_of_birth" placeholder="YYYY/MM/DD">
+      </div>
+
+      <div class="form-group col-md-4 my-3">
+        <label for="exampleInputEmail1 ">Address</label>
+        <input type="text" class="form-control" formControlName="address">
+      </div>
+      <div class="col-md-1"></div>
+      <div class="form-group col-md-3 my-3">
+        <label for="exampleInputPassword1">Contact Number</label>
+        <input type="number " class="form-control"  formControlName="contact_number">
+      </div>
+      <div class="col-md-1"></div>
+      <div class="form-group col-md-3 my-3">
+        <label for="exampleInputPassword1">Emergency Contact Number</label>
+        <input type="number" class="form-control"   formControlName="emergency_contact_number" >
+      </div>
+
+      <div class="form-group col-md-4 my-3">
+        <label for="exampleInputEmail1 ">Employee ID </label>
+        <input type="text" class="form-control" formControlName="employee_id">
+      </div>
+      <div class="col-md-1"></div>
+      <div class="form-group col-md-3 my-3">
+        <label for="exampleInputPassword1">Designation ID</label>
+        <input type="text " class="form-control"  formControlName="designation_id">
+      </div>
+      <div class="col-md-1"></div>
+      <div class="form-group col-md-3 my-3">
+        <label for="exampleInputPassword1">Department ID</label>
+        <input type="text" class="form-control"   formControlName="department_id" >
+      </div>
+      
+
+      <div class="form-group col-md-4 my-3">
+        <label for="exampleInputEmail1 ">Employee Status ID </label>
+        <input type="text" class="form-control" formControlName="employee_status_id">
+      </div>
+      <div class="col-md-1"></div>
+      <div class="form-group col-md-3 my-3">
+        <label for="exampleInputPassword1">Gender </label>
+        <input type="text " class="form-control"  formControlName="gender">
+      </div>
+      <div class="col-md-1"></div>
+      <div class="form-group col-md-3 my-3">
+        <label for="exampleInputPassword1">About Me</label>
+        <input type="text" class="form-control"   formControlName="about_me" >
+      </div>
+
+
+     
+      <div class="col-md-1"></div>
+     
+      <div class="col-md-1"></div>
+      <!-- <div class="form-group col-md-3 my-3">
+        <label for="exampleInputPassword1">Profile Picture</label>
+        <input type="file" class="form-control"   formControlName="profile_pic" >
+      </div> -->
+
     </div>
+
+    <div class="text-center ">
+      <button class="btn btn-primary">Update Info</button>
+    </div>
+    </form>
   </div>
-  
+  </div>

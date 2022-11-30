@@ -81,5 +81,22 @@ export class EmployeesService {
     }
 
 
+    
+    addEmployeeInfo( data:any){
+      var header = {
+        headers: new HttpHeaders().set(
+          'Authorization',
+          `Bearer ${this.accessToken}`
+        ),
+      };
+      
+     
+     
+
+      return this.http.post(`${this.employees}`,data, header)
+
+    }
+
+
 
 }

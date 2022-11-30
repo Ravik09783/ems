@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import {MatTableDataSource} from '@angular/material/table';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -21,7 +22,8 @@ export class HomeComponent implements OnInit {
   role:any;
   constructor(
     private router:Router,
-    private auth: AuthService
+    private auth: AuthService,
+    private http:HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +38,8 @@ export class HomeComponent implements OnInit {
 
   punchIn(){
     console.log(new Date().toLocaleString());
+    this.http.get('http://api.ipify.org/?format=json')
+    .subscribe((res)=>console.log(res))
   }
 
 
