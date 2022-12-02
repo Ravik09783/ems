@@ -40,10 +40,10 @@ export class LoginComponent implements OnInit {
       alert("Please fill all the details")
     }
     else{
-     
+
       this.addRole = this.loginForm.value;
       this.auth.login(this.addRole).subscribe((res:login)=>{
-        console.log("Login Response:", res)
+        console.log("Login Response:", res)                                 
         
         // console.log("response after login", res.personalUserData[0].id)
 

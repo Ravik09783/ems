@@ -1,74 +1,9 @@
-/* .custom-padding {
-    padding: 30px;
-  }
 
-.four-dived li {
-    width: 24%;
-    display: inline-block;
-    padding: 0px 15px;
-    vertical-align: top;
-  }
-.earning-box {
-    background-color: #fff;
-    background-clip: border-box;
-    border: 0 solid #e1e1e1;
-    border-radius: 0.25rem;
-    padding: 1rem 1rem;
-    box-shadow: 0px 0px 5px #e1e1e1;
-    margin-bottom: 15px;
-    transition: 0.9s;
-  }
-  
-.earning-box:hover {
-    margin-top: -5px;
-  }
-  
-p.gray-total {
-    color: #878a99;
-    font-size: 14px;
-    text-transform: uppercase;
-  }
-  
-.total-1 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-p.value-total {
-    font-size: 14px;
-  }
-  
-.text-green {
-    color: #45CB85;
-  }
-  
-.usd-value {
-    margin-top: 20px;
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-  }
-  
-.left-usd h4 {
-    font-weight: 600;
-    font-size: 22px;
-    color: #495057;
-    margin-bottom: 20px;
-  }
-   */
 
    mat-grid-tile {
     background: rgb(203, 203, 204);
-    /* padding: 20px; */
   }
-  /* .profile{
-    padding: 20px;
-  } */
-  /* .hey{
-    margin: 20px;
-    padding: 20px;
-  } */
+
   *{
     overflow: hidden;
   }
@@ -114,7 +49,7 @@ i{
 }
 
 /* ------------Employee Table -------------- */
-/* Structure */
+
 table {
   width: 100%;
 }
@@ -122,4 +57,8 @@ table {
 .mat-form-field {
   font-size: 14px;
   width: 100%;
+}
+
+.cursor{
+  cursor: pointer;
 }

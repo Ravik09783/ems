@@ -26,7 +26,7 @@ export class EmpListComponent implements OnInit {
     this.empService.employeeList().subscribe((res)=>{
       this.EmployeeList = res
       this.EmployeeList = this.EmployeeList.data
-      console.log("$$$$$$$$$", this.EmployeeList)
+      // console.log("$$$$$$$$$", this.EmployeeList)
     })
 
     
@@ -50,5 +50,8 @@ export class EmpListComponent implements OnInit {
 
   }
 
+  empProfile(id:number){
+    this.router.navigate([`../../dashboard/emp-profile/${id}`])
+  }
 
 }

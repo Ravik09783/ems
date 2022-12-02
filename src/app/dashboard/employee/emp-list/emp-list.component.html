@@ -12,9 +12,9 @@
 
       <tr *ngFor="let user of EmployeeList">
         <!-- <th scope="row">1</th> -->
-        <td>{{user.id}}</td>
-        <td>{{user.name}}</td>
-        <td>{{user.email}}</td>
+        <td (click)="empProfile(user.id)">{{user.id}}</td>
+        <td (click)="empProfile(user.id)">{{user.name}}</td>
+        <td (click)="empProfile(user.id)">{{user.email}}</td>
         <td>
           <button class="btn btn-primary" (click)="EditEmployee(user.id)">Edit</button> 
           <button class="btn btn-danger mx-3" (click)="DeleteEmployee(user.id)">Delete</button>

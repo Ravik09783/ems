@@ -5,6 +5,7 @@ import { AddMemberComponent } from './add-member/add-member.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmpEditComponent } from './employee/emp-edit/emp-edit.component';
 import { EmpListComponent } from './employee/emp-list/emp-list.component';
+import { EmpProfileComponent } from './employee/emp-profile/emp-profile.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 
@@ -19,7 +20,8 @@ const routes: Routes = [
             {path:'add-member', component:AddMemberComponent},
             {path:'emp-list', component:EmpListComponent},
             {path:'emp-edit/:id', component:EmpEditComponent},
-            {path:'**', component:NotFoundComponent}
+            {path:'emp-profile/:id', component:EmpProfileComponent},
+            {path:'**', component:NotFoundComponent},
         ]
     }
   

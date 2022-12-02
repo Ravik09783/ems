@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import {MatTableDataSource} from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
+import { EmployeesService } from 'src/app/services/employees.service';
 
 
 
@@ -18,16 +19,22 @@ export class HomeComponent implements OnInit {
 
   roleID!:any;
   totalDepartment!:number;
-  totalEmployee:any=  JSON.parse(localStorage.getItem('allEmployees') || '{}');
+  totalEmployee!:any;
   role:any;
   constructor(
     private router:Router,
     private auth: AuthService,
-    private http:HttpClient
+    private http:HttpClient,
+    private empService: EmployeesService
   ) { }
 
   ngOnInit(): void {
    this.roleID= localStorage.getItem('role_id')
+   this.empService.employeeList().subscribe((res)=>{
+    this.totalEmployee = res;
+    this.totalEmployee = this.totalEmployee.data.length
+
+  })
 
   }
   logout(){

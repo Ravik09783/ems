@@ -1,1 +1,15 @@
-<p>emp-profile works!</p>
+<div class="container" style="height: 100vh; width: 100%;" fxLayoutAlign="center center">
+    <div class="row">
+        <div class="card" style="width: 18rem;" fxLayoutAlign="center center">
+            <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-body" *ngIf="profileDetail">
+                <h5 class="card-title">{{profileDetail.name}}</h5>
+                <h6 class="card-text">{{profileDetail.email}}</h6>
+                <h6 class="card-text">{{profileDetail.contact_number}}</h6>
+                <h6 class="card-text">{{profileDetail.gender}}</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a class="btn btn-primary" routerLink="../../../dashboard/emp-list">Back</a>
+            </div>
+          </div>
+    </div>
+</div>
