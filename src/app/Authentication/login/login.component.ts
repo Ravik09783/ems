@@ -42,6 +42,8 @@ export class LoginComponent implements OnInit {
     else{
 
       this.addRole = this.loginForm.value;
+      console.log(" this.addRole",
+      this.addRole)
       this.auth.login(this.addRole).subscribe((res:login)=>{
         console.log("Login Response:", res)                                 
         

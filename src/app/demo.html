@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+        var datas = [
+            {name:"Ravi Kumar", profession:"Software Developer"},
+            {name:"Anchal Sharma", profession:"Software Developer"}
+        ]
+
+
+        function showData(){
+            setTimeout((data, index)=>{
+                var output = "";
+                datas.map((data)=>{
+                    output += data.name + " "
+
+                })
+
+                document.body.innerHTML = `<li>${output}</li>`
+            },1000)
+
+        }
+
+
+       function createData(name,showData){
+            setTimeout(()=>{
+                datas.push(name)
+        showData();
+
+            },1500)
+        }
+
+        createData({name:'Deeepak Nagar', profession:"Data Scientist"},showData)
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
